@@ -10,7 +10,6 @@ import {
   createAutocomplete,
   createArrowPopover,
   createImageIcon,
-  createTextButtonWithIcon,
   createSelectLabelGroup,
   createFade,
   createLabelTopTextField,
@@ -38,7 +37,6 @@ import {
   MenuItem,
   Fade,
   Avatar,
-  Button,
   Divider,
   Select,
 } from "@mui/material";
@@ -51,8 +49,6 @@ import ArrowIcon from "@mui/icons-material/DoubleArrow";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import HelpIcon from "@mui/icons-material/Help";
-import TableViewIcon from "@mui/icons-material/TableView";
-import { grey } from "@mui/material/colors";
 
 const MotionDiv = createDomMotionComponent("div");
 const Modal = styled(MuiModal)({
@@ -134,19 +130,4 @@ export const TransitionsModal = createTransitionModal(
   IconButton,
   CancelIcon,
   Typography
-);
-
-export const HelpButton = createTextButtonWithIcon(
-  Button,
-  <HelpIcon />,
-  undefined,
-  "12px",
-  grey[700]
-);
-export const UserManualButton = createTextButtonWithIcon(
-  Button,
-  <TableViewIcon />,
-  undefined,
-  "12px",
-  grey[700]
 );

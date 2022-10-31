@@ -13,7 +13,7 @@ import {
 } from "../lib/config/Auth";
 import { TransitionsModal } from "./common";
 import { Page } from "./container/Page";
-import { Layout } from "./Layout";
+import { Layout } from "./layout";
 
 function App() {
   return (

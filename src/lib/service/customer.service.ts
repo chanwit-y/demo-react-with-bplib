@@ -11,7 +11,7 @@ import { Customer } from "../model/Customer";
 
 class CustomerService {
   @query({ http, apiUrl: "/customer", httpMethod: HttpMethod.GET })
-  public get() {
+  public  get() {
     return {
       queryKey: ["getCustomer"],
       queryFn: FnNone<Customer[]>,
@@ -22,8 +22,8 @@ class CustomerService {
   }
 
   @mutate({ http, apiUrl: "/customer", httpMethod: HttpMethod.POST })
-  public create(_: Request<None, None, Customer>) {
-    return FnNone<Customer>;
+  public async create(_: Request<None, None, Customer>) {
+    return FnNone<Customer>();
   }
 }
 
