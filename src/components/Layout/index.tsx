@@ -31,7 +31,7 @@ export const Layout = ({ children }: Props) => {
         headerLine={<ImageIcon src={line} width="100%" height="4px" />}
         projectName={
           <Typography fontWeight={500} fontSize={16}>
-           [App Name] 
+           [------------ App Name ------------]
           </Typography>
         }
         location={location.pathname}

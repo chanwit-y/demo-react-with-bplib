@@ -7,8 +7,8 @@ import customerSrv from "../../lib/service/customer.service";
 import { TextField } from "../common";
 
 export const Page = () => {
-  const { data } = useQueryService(customerSrv.get());
-  const createCus = useMutationService({queryFn: customerSrv.create})
+  const { data, refetch } = useQueryService(customerSrv.get());
+  const createCus = useMutationService({ queryFn: customerSrv.create });
 
   const [cus, setCus] = useState<Customer>({} as Customer);
 
@@ -43,8 +43,20 @@ export const Page = () => {
             setCus((prev) => ({ ...prev, Email: e.target.value }))
           }
         />
-        <Button onClick={() => {
-	}}>Save</Button>
+        <Button
+          onClick={() => {
+            createCus.mutate({
+		body: cus 
+	    }, {
+              onSuccess: (res) => {
+                console.log(res);
+		refetch();
+              },
+            });
+          }}
+        >
+          Save
+        </Button>
       </Box>
     </>
   );
