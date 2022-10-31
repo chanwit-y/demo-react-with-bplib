@@ -12,6 +12,7 @@ import {
   AuthProvider,
 } from "../lib/config/Auth";
 import { TransitionsModal } from "./common";
+import { Page } from "./container/Page";
 import { Layout } from "./Layout";
 
 function App() {
@@ -26,13 +27,8 @@ function App() {
           <MessageBoxProvider option={messageBoxProviderOption}>
             <SnackbarProvider Snackbar={Snackbar} Alert={Alert}>
               <Layout>
-                <div>Test</div>
+                <Page />
               </Layout>
-              {/* <Layout>
-                <PageProvider>
-                  <Router />
-                </PageProvider>
-              </Layout> */}
             </SnackbarProvider>
           </MessageBoxProvider>
         </ModalProvider>
