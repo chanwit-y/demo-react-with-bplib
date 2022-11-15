@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import { AppBar, ImageIcon, Main, Sitebar, Toolbar } from "../common";
 import { menus } from "../../lib/config";
 import { ToolbarEnd } from "./ToolbarEnd";
+import {loader$, error$} from "@banpudev/http-client";
 
 type Props = {
   children: ReactNode;
@@ -15,6 +16,12 @@ type Props = {
 export const Layout = ({ children }: Props) => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    loader$.subscribe((res) => {
+      console.log(res)
+    })
+  }, [])
 
   useEffect(() => {
     console.log(location);
